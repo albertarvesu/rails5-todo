@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'json'
 
 RSpec.describe 'Todos API', type: :request do
-  # initialize test data 
+  # initialize test data
   let!(:todos) { create_list(:todo, 10) }
   let(:todo_id) { todos.first.id }
 
@@ -13,9 +15,6 @@ RSpec.describe 'Todos API', type: :request do
 
     it 'returns todos' do
       # Note `json` is a custom helper to parse JSON responses
-
-      print JSON.pretty_generate(json)
-
       expect(json).not_to be_empty
       expect(json.size).to eq(10)
     end
