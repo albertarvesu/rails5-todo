@@ -1,22 +1,22 @@
-# README
+# todos-api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple todo api built using the latest version of Rails based on https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one with docker.
 
-Things you may want to cover:
+### Versions
+```
+Ruby - 2.5.1
+Rails - 5.2.0
+```
 
-* Ruby version
+### Running web
+1. docker-compose build
+1. docker-compose up
 
-* System dependencies
+then browse http://localhost:3000
 
-* Configuration
+_(any changes to Gemfile should re-execute these commands)_
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+### Running tests
+```
+docker-compose run web bundle exec rspec
+```
