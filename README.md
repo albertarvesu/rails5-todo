@@ -1,5 +1,7 @@
 # todos-api
 
+[![CircleCI](https://circleci.com/gh/albertarvesu/rails5-todo.svg?style=svg)](https://circleci.com/gh/albertarvesu/rails5-todo)
+
 Simple todo api built using the latest version of Rails based on https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one with docker.
 
 ### Versions
