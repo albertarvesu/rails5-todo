@@ -31,22 +31,21 @@ jobs:
           name: Start container and verify it's working
           command: |
             set -x
-            docker-compose up -d
-            docker run --network container:web \
+            docker-compose up --build
+            docker run --network container:repo_web_1 \
               appropriate/curl --retry 10 --retry-delay 1 --retry-connrefused http://localhost:3000
 
       # run tests!
-      # - run:
-      #     name: run tests
-      #     command: |
-      #       mkdir /tmp/test-results
-      #       TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+      - run:
+          name: run tests
+          command: |
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
 
-      #       bundle exec rspec --format progress \
-      #                       --format RspecJunitFormatter \
-      #                       --out /tmp/test-results/rspec.xml \
-      #                       --format progress \
-      #                       $TEST_FILES
+            docker-compose run web bundle exec rspec --format progress \
+                            --format RspecJunitFormatter \
+                            --out /tmp/test-results/rspec.xml \
+                            --format progress \
+                            $TEST_FILES
 
       # # collect reports
       # - store_test_results:
