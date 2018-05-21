@@ -9,8 +9,10 @@ Rails - 5.2.0
 ```
 
 ### Running web
+```
 1. docker-compose build
 1. docker-compose up
+```
 
 then browse http://localhost:3000
 
