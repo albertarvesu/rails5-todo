@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/albertarvesu/rails5-todo.svg?style=svg)](https://circleci.com/gh/albertarvesu/rails5-todo)
 
-Simple todo api built using the latest version of Rails based on https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one with docker.
+Trying to get my hand on Rails the latest version. Following the tutorial from https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one. On top of this, I'd also tried to integrated docker onto this project with integration with CircleCI.
 
 ### Versions
 ```
