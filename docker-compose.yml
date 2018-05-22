@@ -3,12 +3,12 @@ services:
   db:
     image: postgres
     volumes:
-      - $PWD/tmp/db:/var/lib/postgresql/data
+      - ./tmp/db:/var/lib/postgresql/data
   web:
-    build: $PWD
+    build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
-      - $PWD:/todo-api
+      - .:/todo-api
     ports:
       - "3000:3000"
     depends_on:
