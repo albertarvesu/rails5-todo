@@ -33,7 +33,6 @@ jobs:
             set -x
             docker-compose rm
             docker-compose build
-            docker-compose run web bundler install
             docker-compose up
             docker run --network container:repo_web_1 \
               appropriate/curl --retry 10 --retry-delay 1 --retry-connrefused http://localhost:3000
